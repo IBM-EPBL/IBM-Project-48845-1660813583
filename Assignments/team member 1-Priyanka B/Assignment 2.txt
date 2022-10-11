@@ -1,0 +1,36 @@
+import random
+from time import sleep
+
+temp = 0.0
+hum = 0.0
+
+
+while(True):
+    #here the temperature is considered in celsius
+    temp = random.random()*100
+    #humidity is considerd in percentage , the amount of water contained in per cubic meter of air
+    hum = random.random()*100
+
+
+    if(temp > 40 and hum < 30 ):
+        print()
+        print("ALERT 🌡️ Temperature is high")
+        print("Temperature : {:.2f} ".format(temp))
+        print("Humidity : {:.2f} ".format(hum))
+        print()
+    elif(temp < 20 and hum > 50):
+        print()
+        print("ALERT ❄️ Temperature is low")
+        print("Temperature : {:.2f} ".format(temp))
+        print("Humidity : {:.2f} ".format(hum))
+        print()
+    elif((temp >40 and temp >20) and (hum <50 and hum > 30)):
+        print()
+        print("Normal 🌍 ")
+        print("Temperature : {:.2f} ".format(temp))
+        print("Humidity : {:.2f} ".format(hum))
+        print()
+    else:
+        
+        print("Sensing.......")
+    sleep(1)
